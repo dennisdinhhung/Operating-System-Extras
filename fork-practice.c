@@ -15,4 +15,14 @@ int main()
 
     }
 
+    int pid2=fork();
+
+    if (pid==0)
+    {
+        printf("This is the child process.\nStart free -h \n");
+
+        char *args[]={"/bin/free", "-h", NULL};
+
+        execvp ("/bin/free", args);
+    }
 }
